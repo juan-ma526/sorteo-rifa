@@ -1,0 +1,124 @@
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.signIn-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #222;
+}
+
+.box-login {
+  position: relative;
+  width: 400px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: repeating-conic-gradient(from var(--a), #e70009 0%, #e70009 10%, transparent 10%, transparent 50%);
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+}
+
+.box-login::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(from var(--a), #e70009 0%, #e70009 10%, transparent 10%, transparent 50%);
+  animation: animate 6s linear infinite;
+  animation-delay: -1.5s;
+}
+
+.box-login::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 20px solid #222;
+  background-color: #303030;
+}
+.form-login {
+  position: absolute;
+  z-index: 1000;
+}
+
+.form-login h2 {
+  color: #fff;
+  font-weight: 500px;
+  margin-bottom: 20px;
+  padding-top: 60px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.inputBx-login {
+  position: relative;
+  margin-top: 40px;
+  width: 240px;
+}
+
+.inputBx-login span {
+  position: absolute;
+  inset: -2px;
+  z-index: 1;
+}
+
+.inputBx-login span:before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: repeating-conic-gradient(from var(--a), #e70009 0%, #e70009 10%, transparent 10%, transparent 50%);
+  animation: animate 6s linear infinite;
+  box-shadow: 0 0 0 2px #000;
+}
+
+.inputBx-login:nth-child(2) span:before {
+  animation-delay: -1.5s;
+}
+
+.inputBx-login span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #292929;
+}
+
+.inputBx-login input {
+  position: relative;
+  z-index: 10000;
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 8px 14px;
+  background: transparent;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+
+.inputBx-login input::placeholder {
+  color: #fff;
+  opacity: 0.5;
+}
+
+.inputBx-login .submit-login {
+  background-color: #e70009;
+  cursor: pointer;
+  box-shadow: 0 0 0 4px #e70009;
+  width: 100%;
+  font-weight: 500;
+  color: #292929;
+  filter: drop-shadow(0 0 15px #e70009);
+}
